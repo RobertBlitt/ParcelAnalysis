@@ -44,5 +44,21 @@ Large GIS datasets and outputs are \*\*not\*\* tracked in GitHub. They remain lo
 
 \- Jupyter notebooks for orchestration and documentation
 
+## Collaborator Quickstart
+
+**Repo purpose.** This repo tracks the *brains* (code, notebooks, docs) for the ParcelAnalysis sub-project of HCPT. Large GIS data (file geodatabases, shapefiles, rasters) remains local and is excluded via `.gitignore`.
+
+### Folder map
+- `scripts/` – Python modules and notebooks for:
+  - MPAT assembly (`mpat_development/`), exploratory previews (`exploration/`)
+  - Data standardization / reprojection (`data_standardization/`)
+  - Utilities (`99_Utilities/99a_Common_Functions.py`, `99b_HAR_11_62_Standards.py`)
+- `Matrix/` – screening spreadsheets and documentation for “The Matrix”
+- `notes_readme/`, `Academic_Paper/`, `reference/` – project docs, HAR refs, and write-ups
+
+### Local data locations (not in Git)
+Keep your GIS data adjacent to this repo, e.g.:
+
+
 
 
