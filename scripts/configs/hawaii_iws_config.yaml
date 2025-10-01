@@ -1,0 +1,216 @@
+# Hawaii IWS Analysis Configuration - REVISED
+# Focus: Individual Wastewater Systems (HAR 11-62 Subchapter 3 Only)
+# Updated based on DOH website research
+
+project:
+  name: "Hawaii Individual Wastewater Systems Analysis"
+  version: "2.0"
+  description: "Focused analysis for cesspool conversion to approved IWS technologies"
+  regulatory_basis: "HAR 11-62 Subchapter 3: Individual Wastewater Systems"
+  
+jurisdiction:
+  name: "Hawaii"
+  state_code: "HI"
+  projection_epsg: 2783
+  regulatory_authority: "DOH Wastewater Branch"
+  contact_phone: "(808) 586-4400"
+  contact_email: "wastewater@doh.hawaii.gov"
+
+# DOH-Approved Individual Wastewater System Technologies
+approved_technologies:
+  conventional_septic:
+    name: "Conventional Septic System"
+    treatment_level: "Primary"
+    components: ["septic_tank", "soil_absorption_system"]
+    standards: "IAPMO ANSI Z1000-2013"
+    maintenance: "Pump every 3-5 years"
+    
+  aerobic_treatment_unit:
+    name: "Aerobic Treatment Unit (ATU)"
+    treatment_level: "Secondary"
+    components: ["aerobic_unit", "soil_absorption_system"]
+    standards: "NSF Standard No. 40"
+    maintenance: "Service contract required (6-month inspections)"
+    
+  passive_aerobic:
+    name: "Passive Aerobic System"
+    treatment_level: "Enhanced Primary"
+    components: ["septic_tank", "passive_aerobic_component", "soil_absorption"]
+    examples: ["Eljen", "Presby"]
+    note: "Still requires septic tank"
+    
+  bioreactor_garden:
+    name: "Bioreactor Garden"
+    treatment_level: "Advanced"
+    examples: ["Ridge to Reefs"]
+    note: "Emerging technology"
+    
+  composting_toilet:
+    name: "Composting Toilet"
+    scope: "Toilet waste only"
+    note: "Shower/kitchen wastewater requires separate treatment"
+    
+  incinerator_toilet:
+    name: "Incinerator Toilet"
+    scope: "Toilet waste only"
+    note: "Shower/kitchen wastewater requires separate treatment"
+    
+  centralized_sewer:
+    name: "Connection to Centralized Sewer"
+    treatment_level: "Municipal"
+    note: "Where available and capacity exists"
+
+# HAR 11-62 Subchapter 3 Specific Requirements
+iws_requirements:
+  # Lot and Development Limits (HAR 11-62-31.1)
+  lot_requirements:
+    min_size_sf: 10000  # 10,000 SF per IWS
+    max_dwellings_per_lot: 5  # Without special approval
+    max_bedrooms_per_iws: 5   # Individual system limit
+    max_flow_per_iws_gpd: 1000  # Gallons per day
+    
+  # Setback Requirements (HAR 11-62-32, Table II)
+  setbacks_ft:
+    well_private: 100
+    well_public: 150
+    shoreline: 50
+    surface_water: 50
+    building: 10
+    property_line: 5
+    swimming_pool: 10
+    
+  # Wastewater Flow Calculations (HAR 11-62 design standards)
+  flow_calculations:
+    gallons_per_bedroom_per_day: 200
+    design_basis: "Peak daily flow"
+    
+  # Septic Tank Sizing (HAR 11-62-33.1)
+  septic_sizing:
+    bedrooms_1_to_4: 1000  # gallons
+    bedrooms_5: 1250       # gallons
+    formula_over_5: "1000 + (Q-800) * 1.25"  # Q = design flow in gpd
+    
+  # Soil and Site Requirements
+  soil_requirements:
+    min_percolation_rate_min_per_inch: 1
+    max_percolation_rate_min_per_inch: 60
+    min_groundwater_separation_ft: 3
+    min_soil_depth_ft: 5
+    
+  # Site Evaluation (HAR 11-62-31.2)
+  site_evaluation:
+    soil_profile_depth_ft: 5
+    percolation_test_depth_ft: 3
+    test_procedure: "Falling head test"
+    engineer_required: true
+
+# DOH Priority Areas (from 2022 Hazard Assessment)
+priority_areas:
+  priority_1:
+    description: "Significant risk to human health, drinking water, or sensitive waters"
+    examples: ["Upcountry Maui", "Kahalu'u"]
+    action_urgency: "Highest"
+    
+  priority_2:
+    description: "Potential to impact drinking water"
+    action_urgency: "High"
+    
+  priority_3:
+    description: "Potential to impact sensitive waters"
+    action_urgency: "Medium"
+    
+  priority_4:
+    description: "All other cesspools requiring analysis"
+    action_urgency: "Standard"
+
+# Cesspool Conversion Mandate
+conversion_mandate:
+  legislation: "Act 125 (2017), Act 87 (2022)"
+  deadline: "2050-01-01"
+  scope: "All cesspools statewide (~88,000)"
+  options: ["Upgrade", "Convert", "Connect to sewer"]
+  new_cesspool_prohibition: true
+
+# Professional Requirements
+professional_requirements:
+  design:
+    license_required: "Hawaii Licensed Civil Engineer"
+    plans_required: true
+    submission_portal: "wastewater.ehawaii.gov"
+    
+  construction:
+    license_required: ["A", "C-9", "C-37", "C-37a", "C-43"]
+    inspection_required: true
+    final_approval_required: true
+    
+  maintenance:
+    aerobic_units: "Service contract required"
+    inspection_frequency: "6 months"
+    certified_operator: "Recommended"
+
+# Available Financing Options (from DOH research)
+financing_options:
+  state_tax_credit:
+    program: "Wastewater Tax Credit"
+    eligibility: "Qualifying homeowners"
+    covers: ["Septic tanks", "Aerobic units", "Sewer connections"]
+    
+  federal_programs:
+    usda_rural_development:
+      loan_rate: "1% interest"
+      grant_eligibility: "62+ years, up to $7,500"
+      eligible_areas: ["Kauai", "Molokai", "Lanai", "rural areas"]
+      
+    epa_cwsrf:
+      program: "Clean Water State Revolving Fund"
+      type: "Low-interest loans"
+      eligible_projects: "Decentralized wastewater treatment"
+
+# Data Layer Requirements (IWS-Focused)
+required_data:
+  parcels:
+    scope: "Residential parcels only"
+    exclude: ["Large commercial", "Industrial", "Municipal"]
+    
+  priority_areas:
+    source: "DOH 2022 Hazard Assessment"
+    format: "GIS boundaries"
+    status: "NEED TO ACQUIRE"
+    
+  existing_systems:
+    cesspool_locations: "DOH cesspool cards"
+    septic_locations: "DOH IWS database"
+    sewer_service_areas: "County utilities"
+    
+  environmental:
+    focus: "Site suitability for approved IWS technologies"
+    critical: ["Soil percolation", "Groundwater depth", "Slope"]
+
+# Analysis Framework
+analysis_framework:
+  step_1: "Identify parcels with cesspools (conversion candidates)"
+  step_2: "Evaluate site suitability for approved IWS technologies"
+  step_3: "Apply HAR 11-62 Subchapter 3 requirements"
+  step_4: "Integrate DOH priority area designations"
+  step_5: "Generate technology recommendations with financing options"
+  
+  exclusions:
+    - "Parcels already on sewer"
+    - "Parcels with compliant IWS"  
+    - "Large commercial/industrial operations"
+    - "Properties outside IWS scope"
+
+# Output Specifications
+outputs:
+  technology_matrix: "DOH-approved IWS technologies only"
+  regulatory_compliance: "HAR 11-62 Subchapter 3 focused"
+  priority_integration: "DOH priority area alignment"
+  financing_guidance: "Reference actual available programs"
+  implementation_pathway: "Licensed engineer → DOH approval → licensed contractor"
+
+# Quality Control
+quality_control:
+  regulatory_alignment: "100% compliance with HAR 11-62 Subchapter 3"
+  technology_validation: "Only DOH-approved IWS technologies"
+  professional_pathway: "Licensed engineer requirement integrated"
+  financing_accuracy: "Current program information only"

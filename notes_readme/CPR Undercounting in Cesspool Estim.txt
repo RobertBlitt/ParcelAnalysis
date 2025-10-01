@@ -1,0 +1,62 @@
+CPR Undercounting in Cesspool Estimates (Maui and Statewide)
+
+Hi team,
+
+Here’s a summary of the recent work I did analyzing potential undercounting of cesspools due to Condominium Property Regime (CPR) subdivisions, particularly in rural areas of Maui. I believe these findings have significant implications statewide.
+
+Problem
+
+Hawai‘i’s official cesspool estimates are based on 9-digit TMK parcel-level counts. This approach misses many residential units created through CPR subdivisions, which are tracked using 13-digit TMKs. This is especially problematic in rural areas, where CPRs are common and dwellings are more likely to rely on cesspools—but don’t show up in parcel-based tallies.
+
+What I Did
+
+Parsed Maui County’s DWELDAT 2025 fixed-width file to extract TMK13, bedroom counts, and other key fields
+
+Filtered for residential dwellings with one or more bedrooms
+
+Generated TMK9 values (the base parcel identifier) to identify shared parcels
+
+Focused analysis on rural regions of Maui (Upcountry, Hāna, Pāʻia, Haʻikū) using TMK5 prefixes
+
+Counted how many dwellings would be missed if relying only on 9-digit TMKs
+
+Key Results – Rural Maui
+
+3,459 CPR dwellings with at least one bedroom
+
+These were spread across only 586 unique base parcels (TMK9s)
+
+This averages nearly 6 units per parcel
+
+Approximately 2,873 dwellings in rural Maui alone would be undercounted if only TMK9s were used
+
+Statewide Implications – Rural Areas Only
+
+Using the 5.9x multiplier observed on Maui, I estimated similar undercounts in rural areas across the state:
+
+Island	Estimated Rural Parcels	Estimated CPR Dwellings	Estimated Undercount
+Maui	586 (measured)	3,459 (measured)	2,873 (measured)
+Hawai‘i	~3,500	~20,600	~17,100
+Kaua‘i	~1,400	~8,200	~6,800
+O‘ahu	~600 (rural only)	~3,500	~2,900
+Total	~6,086	~35,759	~29,700
+
+Comparison to Official Cesspool Counts
+
+Source	Estimated Cesspools
+DOH (current official count)	~83,000
+CPR-adjusted estimate	~113,000+
+
+This suggests the true number of cesspools may be undercounted by more than 35% statewide, based on missing CPR units in rural regions alone.
+
+Conclusions
+
+CPR dwellings are significantly undercounted using parcel-level data
+
+Rural areas are particularly affected due to shared TMK9 parcels and lack of sewer infrastructure
+
+This undercount could affect statewide cesspool planning, funding, and prioritization
+
+A better approach is to analyze 13-digit TMKs with residential indicators (such as bedrooms) in non-sewered areas
+
+My results align well with Census housing unit estimates, providing an important cross-check

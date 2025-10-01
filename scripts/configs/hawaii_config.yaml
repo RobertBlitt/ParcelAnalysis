@@ -1,0 +1,135 @@
+# Hawaii Cesspool Analysis Configuration
+# Location: scripts/configs/hawaii_config.yaml
+
+project:
+  name: "Hawaii Cesspool Analysis"
+  version: "1.0"
+  description: "Enhanced parcel-based cesspool technology selection analysis"
+  
+jurisdiction:
+  name: "Hawaii"
+  state_code: "HI"
+  projection_epsg: 2783  # Hawaii State Plane Zone 3
+  projection_name: "NAD83 / Hawaii zone 3"
+  
+# Data layer specifications
+data_layers:
+  # Critical Priority Layers
+  parcels:
+    source: "Hawaii Statewide GIS"
+    current_file: "data/tmk_state.shp"
+    key_field: "TMK"
+    status: "HAVE"
+    
+  dweldat:
+    source: "State of Hawaii Tax Office"
+    current_file: "scripts/dweldat25_cleaned.csv"
+    key_field: "TMK13"
+    status: "HAVE"
+    
+  water_wells:
+    source: "CWRM Well Database"
+    url: "https://dlnr.hawaii.gov/cwrm/groundwater/well-data/"
+    format: "csv/shapefile"
+    status: "NEED"
+    priority: "CRITICAL"
+    
+  soil_survey:
+    source: "NRCS Web Soil Survey"
+    url: "https://websoilsurvey.sc.egov.usda.gov/"
+    format: "shapefile"
+    status: "NEED"
+    priority: "CRITICAL"
+    
+  elevation:
+    source: "USGS 3DEP"
+    url: "https://elevation.nationalmap.gov/"
+    format: "raster"
+    resolution: "10m"
+    status: "NEED"
+    priority: "CRITICAL"
+    
+  # High Priority Layers
+  building_footprints:
+    source: "County GIS Departments"
+    status: "NEED"
+    priority: "HIGH"
+    
+  zoning:
+    source: "County Planning Departments"
+    status: "NEED"
+    priority: "HIGH"
+    
+  special_mgmt_areas:
+    source: "County Planning Departments"
+    status: "NEED"
+    priority: "HIGH"
+    
+  sewer_systems:
+    source: "County Utilities"
+    status: "NEED"
+    priority: "HIGH"
+
+# Hawaii Administrative Rule 11-62 Standards
+regulatory_standards:
+  # Setback requirements (feet)
+  setbacks:
+    well_private_ft: 100
+    well_public_ft: 150
+    shoreline_ft: 50
+    surface_water_ft: 50
+    building_ft: 10
+    property_line_ft: 5
+    
+  # Lot requirements
+  lot_requirements:
+    min_size_sf: 10000
+    min_size_per_dwelling_sf: 10000
+    max_dwellings_per_lot: 5  # Without special approval
+    
+  # Wastewater flow calculations
+  flow_calculations:
+    gallons_per_bedroom_per_day: 200
+    gallons_per_bathroom_per_day: 50  # For non-residential
+    
+  # Septic tank sizing (gallons)
+  septic_sizing:
+    min_size_gal: 1000
+    bedrooms_4_or_less: 1000
+    bedrooms_5: 1250
+    formula_over_5: "1000 + (Q-800) * 1.25"  # Q = design flow
+    
+  # Soil requirements
+  soil_requirements:
+    min_percolation_rate_min_per_inch: 1
+    max_percolation_rate_min_per_inch: 60
+    min_depth_to_groundwater_ft: 3
+    
+# Field naming conventions
+field_conventions:
+  prefixes:
+    identifier: "ID_"
+    distance: "DIST_"
+    area: "AREA_"
+    slope: "SLOPE_"
+    regulatory: "REG_"
+    calculated: "CALC_"
+    
+  suffixes:
+    feet: "_FT"
+    square_feet: "_SF"
+    acres: "_AC"
+    percent: "_PCT"
+    gallons: "_GAL"
+    
+# Output specifications
+outputs:
+  coordinate_system: "EPSG:2783"
+  feature_class_prefix: "Hawaii_"
+  csv_encoding: "utf-8"
+  
+# Quality control thresholds
+quality_control:
+  completeness_threshold_pct: 95
+  spatial_accuracy_ft: 5
+  data_currency_years: 5

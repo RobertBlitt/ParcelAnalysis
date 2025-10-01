@@ -1,0 +1,46 @@
+
+TECHNOLOGY MATRIX UPDATE LOG
+===========================
+Date: 2025-09-25 15:49:18
+Original File: C:\Users\rober\OneDrive\Documents\GIS_Projects\ParcelAnalysis\Matrix\Technology,Treatment,Disposal,Treat.xls
+Updated File: C:\Users\rober\OneDrive\Documents\GIS_Projects\ParcelAnalysis\Matrix\Technology_Matrix_Screening_Updated.xlsx
+
+CHANGES MADE:
+============
+
+1. ADDED DISCLAIMER COLUMNS:
+   - SCREENING_TOOL_ONLY: Emphasizes preliminary screening purpose
+   - SITE_TESTING_REQD: Requires site-specific evaluation
+   - DOH_PERMIT_REQD: Mandates regulatory compliance
+
+2. UPDATED SOIL CLASSIFICATION APPROACH:
+   - Replaced site-specific soil requirements with screening-level classifications
+   - Added four screening categories based on NRCS KSAT data
+   - Conservative approach requiring professional follow-up
+
+3. SCREENING-LEVEL CLASSIFICATIONS ADDED:
+   - High_Infiltration_Potential: KSAT >25 μm/s from soil survey data
+   - Moderate_Infiltration_Potential: KSAT 5-25 μm/s from soil survey data  
+   - Low_Infiltration_Potential: KSAT <5 μm/s from soil survey data
+   - Data_Insufficient: No reliable soil survey data available
+
+4. CONSERVATIVE DEFAULT VALUES:
+   - All screening columns default to 0 (not suitable)
+   - Requires case-by-case professional evaluation
+   - Emphasizes need for site-specific testing
+
+RATIONALE:
+=========
+- Matrix now serves as screening tool for planning purposes only
+- Removes inappropriate site-specific design elements
+- Adds extensive disclaimers about limitations
+- Aligns with professional engineering requirements
+- Meets academic standards for uncertainty acknowledgment
+
+NEXT STEPS:
+==========
+1. Review updated Matrix with subject matter experts
+2. Populate screening columns with appropriate technology compatibility
+3. Test screening approach with pilot parcels
+4. Document validation and verification procedures
+5. Integrate with master attribute table workflow

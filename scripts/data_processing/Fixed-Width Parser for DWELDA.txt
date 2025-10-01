@@ -1,0 +1,91 @@
+# --- Fixed-Width Parser for DWELDAT File ---
+# Purpose: Read and label the full DWELDAT fixed-width text file
+# Input: 'DWELDAT2025.txt' (36MB fixed-width text)
+# Output: Cleaned full table with headers + optional subset for TMK + BEDROOMS
+
+import pandas as pd
+
+# Step 1: Define fixed-width column specs (zero-based index, end is exclusive)
+# Based on full DWELDAT layout from the official metadata PDF
+colspecs = [
+    (0, 13),    # TMK13
+    (13, 17),   # Tax Year
+    (17, 21),   # Sequence Number
+    (21, 29),   # Land Area
+    (29, 32),   # Number of Buildings
+    (32, 37),   # Building Style Code
+    (37, 42),   # Occupancy Code
+    (42, 47),   # Roof Cover Code
+    (47, 52),   # Roof Structure Code
+    (52, 57),   # Ext Wall Code
+    (57, 62),   # Int Wall Code
+    (62, 67),   # Flooring Code
+    (67, 71),   # Total Rooms
+    (71, 76),   # Total Bathrooms
+    (76, 81),   # Bedrooms
+    (81, 86),   # Full Baths
+    (86, 91),   # Half Baths
+    (91, 96),   # Stories
+    (96, 101),  # Units
+    (101, 106), # Year Renovated
+    (106, 111), # Effective Year Built
+    (111, 116), # Condition Code
+    (116, 121), # Quality Code
+    (121, 126), # Use Code
+    (126, 131), # Year Built
+    (131, 136), # Living Area
+    (136, 141), # Garage Area
+    (141, 146), # Other Area
+    (146, 151), # Carport Area
+    (151, 156), # Lanai Area
+    (156, 161), # Basement Area
+    (161, 166), # Recreation Area
+    (166, 171), # Other Improvements
+    (171, 176), # Fireplace Count
+    (176, 181), # Pool Code
+    (181, 186), # Value Building
+    (186, 191), # Value Land
+    (191, 196), # Exemptions
+    (196, 201), # Net Taxable Value
+    (229, 239), # Total Assessed Value (Real Prop)
+]
+
+# Step 2: Define corresponding column names
+column_names = [
+    'TMK13', 'Tax_Year', 'Seq_No', 'Land_Area', 'Num_Bldgs', 'Bldg_Style_Code',
+    'Occupancy_Code', 'Roof_Cover_Code', 'Roof_Structure_Code', 'Ext_Wall_Code',
+    'Int_Wall_Code', 'Flooring_Code', 'Total_Rooms', 'Total_Bathrooms',
+    'Bedrooms', 'Full_Baths', 'Half_Baths', 'Stories', 'Units',
+    'Year_Renovated', 'Effective_Year_Built', 'Condition_Code', 'Quality_Code',
+    'Use_Code', 'Year_Built', 'Living_Area', 'Garage_Area', 'Other_Area',
+    'Carport_Area', 'Lanai_Area', 'Basement_Area', 'Recreation_Area',
+    'Other_Improvements', 'Fireplace_Count', 'Pool_Code', 'Value_Building',
+    'Value_Land', 'Exemptions', 'Net_Taxable_Value', 'Total_Assessed_Value'
+]
+
+# Step 3: Read the fixed-width file (adjust file path if needed)
+file_path = 'DWELDAT2025.txt'
+df = pd.read_fwf(file_path, colspecs=colspecs, names=column_names, dtype=str)
+
+# Step 4: Convert numeric fields
+numeric_fields = [
+    'Land_Area', 'Num_Bldgs', 'Total_Rooms', 'Total_Bathrooms', 'Bedrooms',
+    'Full_Baths', 'Half_Baths', 'Stories', 'Units', 'Year_Renovated',
+    'Effective_Year_Built', 'Year_Built', 'Living_Area', 'Garage_Area',
+    'Other_Area', 'Carport_Area', 'Lanai_Area', 'Basement_Area',
+    'Recreation_Area', 'Fireplace_Count', 'Value_Building', 'Value_Land',
+    'Exemptions', 'Net_Taxable_Value', 'Total_Assessed_Value'
+]
+
+for col in numeric_fields:
+    df[col] = pd.to_numeric(df[col].str.strip(), errors='coerce')
+
+# Step 5: Save full cleaned table
+df.to_csv('DWELDAT2025_cleaned.csv', index=False)
+
+# Step 6: Save TMK + Bedrooms table
+df[['TMK13', 'Bedrooms']].to_csv('TMK_Bedrooms.csv', index=False)
+
+print("✅ Parsing complete. Files saved:")
+print(" - DWELDAT2025_cleaned.csv")
+print(" - TMK_Bedrooms.csv")

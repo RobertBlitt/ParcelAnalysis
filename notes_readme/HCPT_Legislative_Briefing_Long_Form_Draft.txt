@@ -1,0 +1,108 @@
+Hawai?i Cesspool Prioritization Tool Overlay and Spatial Resolution Addendum
+Legislative Briefing Draft — Long Form
+
+Executive Summary
+This long form draft summarizes the status and direction of the Hawai?i Cesspool Prioritization Tool (HCPT), the Overlay and Spatial Resolution Addendum, and the aligned implementation workstreams requested by the Legislature. It is written for legislative staff and policy makers. The HCPT is a statewide geospatial screening tool that integrates physical, social, and ecological factors to identify areas with the greatest potential hazard from cesspool effluent. The Overlay and Spatial Resolution Addendum refines resolution for planning and implementation.
+Key points:
+
+• Act 125 mandates replacement or decommissioning of all cesspools by 2050. Subsequent acts direct feasibility studies, coordinated county planning, and refinement of spatial tools used to target investments.
+• HCPT provides a transparent, reproducible, statewide screening framework. It is not a prescriptive decision tool; it supports county and state planning workflows.
+• The 2022 HCPT integrates fifteen risk factors, uses census geographies to reflect cumulative effects, and was validated against the Act 132 statewide assessment of coastal wastewater signals.
+• The Overlay and Spatial Resolution Addendum emphasizes parcel scale diagnostics where appropriate, adjustable regulatory thresholds for siting analysis, and overlays for sewer expansion feasibility.
+• Equity, affordability, and homeowner readiness are central. The draft outlines program design elements that align prioritization with financial assistance and outreach.
+• Limitations include inventory uncertainty, exclusion of non-cesspool sources in the scoring, and finite coverage of some datasets. These are addressed through QC, sensitivity testing, and monitoring.
+Legislative Context and Policy Mandates
+The State has established a statutory framework to eliminate cesspools, protect drinking water sources, and reduce wastewater impacts to streams and nearshore ecosystems. The framework is anchored by the following acts and related agency deliverables.
+ActYearMandate or DirectionPrimary Tools and ProductsAct 1252017Replace or decommission all cesspools statewide by 2050HCPT statewide screening; county and DOH planningAct 1322018Statewide assessment of nearshore wastewater influenceObserved and modeled indicators used for HCPT validationAct 1352022Interagency coordination and county planning for feasible sewer or centralized optionsCounty feasibility overlays and alternatives analysis informed by HCPTAct 2172024Spatial Resolution Addendum and planning guidance to connect statewide screening to implementable projectsHCPT Overlay and Addendum; planner-facing viewer and datasetsThe HCPT and this Addendum translate statewide goals into actionable planning information for counties and DOH, while preserving transparency for homeowners and communities through a public-facing viewer.
+Role of HCPT as a Screening Tool
+HCPT is a hazard-based geospatial model intended to highlight areas where cesspools are most likely to create human and environmental impacts. It supports program design and sequencing. It does not assign compliance timelines to individual parcels, and it does not replace engineering design, site evaluation, or county alternatives analysis.
+HCPT Overview — Model and Validation
+The 2022 HCPT integrates fifteen risk factors that either control contaminant transport or represent downstream social and ecological values. Individual cesspool scores are aggregated by census tracts, block groups, or blocks to reflect cumulative effects. Observation-based tracer datasets were excluded from scoring to avoid sampling bias; instead, model results were compared against the statewide assessment completed under Act 132. This supported face validity of priority areas while preserving even treatment across the islands.
+Risk factors included:
+
+• Distance to drinking water wells
+• Well capture zones
+• Distance to streams and wetlands
+• Distance to coastline
+• Sea level rise zones
+• Precipitation
+• Depth to groundwater
+• Groundwater flow paths
+• Soil characteristics
+• Cesspool density
+• Coral cover
+• Resource fish biomass and recovery potential
+• Coastline visitation
+• Proximity to lifeguarded beaches
+• Coastal ocean circulation proxy
+Public viewer: https://seagrant.soest.hawaii.edu/app/  Planner viewer: https://seagrant.soest.hawaii.edu/app2/  Landing page: https://seagrant.soest.hawaii.edu/cesspools-tool/
+Overlay and Spatial Resolution Addendum — Purpose and Scope
+The Overlay and Spatial Resolution Addendum bridges statewide screening and implementation by refining spatial diagnostics where that adds value. It preserves census level aggregation for public communication and county program sequencing, while enabling parcel scale checks for siting feasibility.
+Core elements:
+
+• Parcel-level diagnostics, including internal setbacks via negative buffers and minimum vertical separation to groundwater based on statewide datasets
+• Adjustable regulatory thresholds for testing siting scenarios, for example varying well or surface water buffers and groundwater separation within regulatory bounds
+• Overlays for sewer expansion feasibility, including proximity to existing sewer mains, topography and slope, and indicative construction constraints
+• Cluster and decentralized options screening, for example small community systems or advanced treatment units where individual siting constraints exist
+• County alternatives analysis alignment, including cost bands per parcel, phasing logic, and identification of likely near-term projects
+Regulatory Crosswalk — HAR 11-62 and Related Siting Constraints
+Legislators and county planners benefit from a clear crosswalk between HCPT hazard factors and siting rules. The Addendum organizes parcel checks around the following HAR 11-62 themes, with rule citations incorporated in the planner viewer:
+Regulatory ThemeSpatial Check in AddendumSetbacks to drinking water wells and sourcesBuffers to mapped municipal and domestic wells and capture zonesSetbacks to surface water, wetlands, and coastlineBuffers to streams, wetlands, and shoreline based on state datasetsVertical separation to groundwaterDepth to water table from statewide models compared to required separationSoil and slope suitabilityConsolidated soil limitations and slope thresholds for standard systemsProhibited or restricted locationsFlood hazard, sea level rise exposure, and critical habitat flags for planning awarenessAdvanced treatment triggersIdentification of parcels likely to require ATUs due to constraintsThe crosswalk is intended to inform program design and early technical assistance, not to substitute for site investigations or permit reviews.
+County Integration — Feasibility, Alternatives, and Sequencing
+Counties will use HCPT priority areas and the Addendum diagnostics to build alternatives analyses and program phasing. Integration points include:
+
+• Overlay of sewer main proximity and condition assessments to scope expansion options
+• Identification of clusters where shared systems are more cost effective than one parcel at a time
+• Preliminary cost banding by option, including service laterals and decommissioning costs
+• Coordination with water departments on source protection and well capture considerations
+• Selection of pilot areas that combine high hazard scores with engineering feasibility and community readiness
+Equity, Affordability, and Homeowner Readiness
+Prioritization should align with the ability of households and communities to participate. Program elements include:
+
+• Targeted financial assistance tiers that reflect income and housing tenure, with simple intake and verification
+• Early outreach in high priority tracts that explains options, costs, and funding paths
+• Coordination with building departments to streamline permits and inspections for standard replacements
+• Protection against displacement and undue burdens for renters and small landlords through grant or low interest financing
+• Transparent public dashboards that show progress by island and by priority category
+Implementation Roadmap — Phases and Deliverables
+Near term, foundation work:
+
+• Inventory quality control using permit, tax, and dwelling datasets
+• Finalize Overlay and Spatial Resolution Addendum layers and planner viewer capabilities
+• County overlay assembly for sewer mains and construction constraints
+• Pilot area selection and stakeholder engagement
+Mid term, pilot execution and feedback:
+
+• Parcel diagnostics in pilot areas and homeowner technical assistance
+• Alternatives analysis for sewer expansion, clusters, and decentralized options
+• Funding program launch aligned with pilot areas
+• Monitoring of groundwater and coastal indicators in selected locations
+Long term, scaling and continuous improvement:
+
+• Expand pilots to additional tracts based on lessons learned
+• Update datasets and thresholds as new information becomes available
+• Sustain public reporting on costs, conversions, and environmental indicators
+• Coordinate with broader wastewater and water supply planning
+Limitations and Uncertainty
+The project team recognizes the following limitations. The plan addresses them through quality control, sensitivity testing, monitoring, and conservative interpretation.
+
+• Cesspool inventory uncertainty for number and location of units
+• Exclusion of non cesspool sources in HCPT scoring, for example agriculture or injection wells, which may influence local water quality
+• Finite spatial coverage and resolution for some statewide datasets, especially on the smaller islands
+• Hazard based scoring does not quantify individual risk or illness rates
+• Screening outputs do not replace engineering design or regulatory review
+Validation and Monitoring
+The 2022 HCPT prioritization was compared with statewide results from the Act 132 assessment of wastewater influence along the coast. The program will continue to support targeted validation and monitoring in pilot areas to confirm that conversions reduce local indicators and improve conditions at sensitive receptors.
+Communication and Public Tools
+The public viewer quickly answers common homeowner questions using color coded tract highlights and parcel dots, while the planner viewer provides layers needed for county workflows. The team will continue to refine usability for both audiences and maintain open access to methods and data repositories.
+Forthcoming Products
+ProductPurposeNotesOverlay and Spatial Resolution AddendumRefined diagnostics and planner viewerParcel checks, adjustable thresholds, sewer feasibility overlaysCounty Feasibility OverlaysSewer mains, slopes, constraintsSupports alternatives analysisPilot Area PackagesBundle of maps, diagnostics, outreach materialsFor selection and launchPublic DashboardProgress tracking and transparencyConversions, funding, indicatorsMethods and Data Repository UpdateReproducibility and trustVersioned notebooks and datasetsReferences and Sources
+• 2022 Hawai?i Cesspool Hazard Assessment and Prioritization Tool — Updated Report and Technical Appendices. University of Hawai?i Sea Grant and WRRC.
+• Act 125, 132, 135, and 217 — Hawai?i State Legislature.
+• Fletcher, C. et al. Living on the Shores of Hawai?i, Chapter on Sewage Treatment and Polluted Runoff.
+• Mezzacapo, M. 2021. Hawai?i’s Cesspool Problem — Review and Recommendations.
+• Supporting technical notes and notebooks hosted by the project team.
+Figures and Maps — Placeholders
+• Figure 1. Statewide HCPT prioritization categories by census tract.
+• Figure 2. Example pilot area showing parcel diagnostics and sewer feasibility overlays.
+• Figure 3. Regulatory crosswalk schematic used in planner viewer.
