@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?><messages><msg code="0" type="2">Start Time: Friday, September 19, 2025 2:15:42 PM</msg><msg code="-2147467259" type="100">﻿Traceback (most recent call last):
+﻿  File "c:\program files\arcgis\pro\Resources\ArcToolbox\scripts\FeatureclassConversion.py", line 21, in &lt;module&gt;
+﻿    import ConversionUtils
+﻿  File "c:\program files\arcgis\pro\Resources\ArcToolbox\scripts\ConversionUtils.py", line 19, in &lt;module&gt;
+﻿    gp = arcgisscripting.create(9.3)
+﻿         ^^^^^^^^^^^^^^^^^^^^^^
+﻿AttributeError: module 'arcgisscripting' has no attribute 'create'
+</msg><msg code="0" type="0">Failed script Feature Class To Shapefile...</msg><msg code="-2147467259" type="100">Failed to execute (FeatureClassToShapefile).</msg><msg code="0" type="3">Failed at Friday, September 19, 2025 2:15:42 PM (Elapsed Time: 0.37 seconds)</msg></messages>

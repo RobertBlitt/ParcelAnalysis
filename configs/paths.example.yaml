@@ -1,0 +1,83 @@
+# ParcelAnalysis Path Configuration Template
+# Copy this file to paths.yaml and customize for your machine
+# paths.yaml is gitignored to protect personal file paths
+
+# Base paths
+project_root: "C:/GIS_Projects/ParcelAnalysis"
+data_root: "C:/GIS_Projects/ParcelAnalysis/data"
+
+# Standard CRS for Hawaii statewide analysis
+crs:
+  standard: "EPSG:26904"  # UTM Zone 4, NAD 83 (HARN)
+  
+  # County-specific CRS if needed (otherwise use standard)
+  hawaii: "EPSG:26904"
+  maui: "EPSG:26904"
+  honolulu: "EPSG:26904"
+  kauai: "EPSG:26904"
+
+# Data directory paths
+paths:
+  # Source data (read-only)
+  raw:
+    parcels:        "{data_root}/00_raw/parcels"
+    cesspools:      "{data_root}/00_raw/cesspools"
+    slope:          "{data_root}/00_raw/slope"
+    soils:          "{data_root}/00_raw/soils"
+    groundwater:    "{data_root}/00_raw/groundwater"
+    wells_domestic: "{data_root}/00_raw/wells_domestic"
+    wells_municipal: "{data_root}/00_raw/wells_municipal"
+    shoreline:      "{data_root}/00_raw/shoreline"
+    surface_water:  "{data_root}/00_raw/surface_water"
+    zoning:         "{data_root}/00_raw/zoning"
+    sma:            "{data_root}/00_raw/sma"
+    flood:          "{data_root}/00_raw/flood"
+    tsunami:        "{data_root}/00_raw/tsunami"
+    habitat:        "{data_root}/00_raw/habitat"
+    building_footprints: "{data_root}/00_raw/building_footprints"
+  
+  # Working data (scratch/intermediate)
+  interim: "{data_root}/01_interim"
+  
+  # Final outputs
+  processed: "{data_root}/02_processed"
+  
+  # Small reference data
+  external: "{data_root}/03_external"
+  
+  # Documentation
+  docs: "{data_root}/04_docs"
+
+# Geodatabase paths
+geodatabase:
+  main: "{project_root}/ParcelAnalysis.gdb"
+  
+  # Feature dataset names within geodatabase
+  datasets:
+    source: "SOURCE_imports"
+    working: "WORKING_layers"
+    master: "MASTER_outputs"
+    matrix: "MATRIX_results"
+
+# ArcGIS Pro project
+aprx_path: "{project_root}/ParcelAnalysis.aprx"
+
+# Output paths
+outputs:
+  maps: "{project_root}/outputs/maps"
+  reports: "{project_root}/outputs/reports"
+  tables: "{project_root}/outputs/tables"
+  deliverables: "{project_root}/outputs/final_deliverables"
+
+# Matrix thresholds (from HAR 11-62)
+thresholds:
+  wells:
+    municipal_setback_ft: 1000
+    domestic_setback_ft: 100
+  shoreline:
+    setback_ft: 50
+  groundwater:
+    min_separation_ft: 3
+  slope:
+    septic_max_pct: 20
+    atu_max_pct: 30

@@ -1,19 +1,51 @@
-# Python / Jupyter
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
+# ============================================================================
+# ParcelAnalysis .gitignore
+# Keep heavy GIS data out of Git; track code, notebooks, docs, and Matrix.
+# ============================================================================
 
-# ArcGIS projects
+# === HEAVY TREES (IGNORE EVERYTHING INSIDE) ===
+/data/**
+/outputs/**
+/ParcelAnalysis.gdb/**
+
+# Re-include the small, text-y bits you DO want under /data
+!data/
+!data/README.md
+!data/03_external/
+!data/03_external/**/*.csv
+!data/03_external/**/*.json
+!data/04_docs/
+!data/04_docs/**/*.md
+!data/04_docs/**/*.txt
+!data/04_docs/**/*.csv
+
+# ArcGIS lock files anywhere (these cause "Permission denied" during git ops)
+*.sr.lock
+*.lock
+
+# === GIS PROJECT/WORKSPACE FILES (anywhere) ===
 *.aprx
-*.atbx
-*.pyt
+*.mxd
 *.tbx
+*.pyt
+*.rvt
+*.3dd
+*.sxd
+*.nmf
+*.mxt
+*.lyr
 *.lyrx
+*.stylx
+*.atx
 
-# Geodatabases and heavy GIS
+# === GEODATABASES & BIG GIS FORMATS (belt & suspenders) ===
 *.gdb/
-*.mdb/
+*.gdb.zip
+*.mdb
+*.accdb
 *.sde
+
+# Shapefile components
 *.shp
 *.shx
 *.dbf
@@ -21,22 +53,99 @@ __pycache__/
 *.cpg
 *.sbn
 *.sbx
-*.xml
-*.ovr
-*.img
+*.shp.xml
+
+# Rasters
 *.tif
 *.tiff
+*.img
+*.jp2
 *.sid
+*.ecw
+*.bil
+*.bip
+*.bsq
+*.adf
+*.aux
+*.rrd
+*.ovr
 
-# Local data & outputs
-data/
-Outputs/
-scratch/
-_Raw/
-GpMessages/
-ImportLog/
-ParcelAnalysis.gdb/
+# CAD
+*.dwg
+*.dxf
+*.dgn
 
-# System
+# === PERSONAL CONFIGS ===
+configs/paths.yaml
+
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+ENV/
+env/
+.env
+.venv
+
+# === JUPYTER ===
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === LOGS ===
+*.log
+*.out
+*.err
+
+# === ARCHIVES ===
+*.zip
+*.7z
+*.tar
+*.gz
+*.rar
+
+# === SYSTEM FILES ===
 .DS_Store
 Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ============================================================================
+# WHAT WE **DO** TRACK (explicitly allowed even with rules above)
+# Core docs & repo metadata
+!README.md
+!CHANGELOG.md
+!ROADMAP.md
+
+# Config template
+!configs/paths.example.yaml
+
+# Matrix, scripts, notebooks, docs (tracked by default)
+!matrix/**
+!scripts/**
+!notes_readme/**
+!validation/**
+!docs/**
