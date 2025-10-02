@@ -10,17 +10,20 @@
 /Index/**                 # ArcGIS project index thumbnails/caches
 
 # Re-include the small, text-y bits you DO want under /data
+# (We must re-include parent dirs for Git to see whitelisted files.)
 !data/
 !data/README.md
+
 !data/03_external/
 !data/03_external/**/*.csv
 !data/03_external/**/*.json
+
 !data/04_docs/
 !data/04_docs/**/*.md
 !data/04_docs/**/*.txt
 !data/04_docs/**/*.csv
 
-# ArcGIS lock files anywhere
+# ArcGIS lock files anywhere (avoid "Permission denied")
 *.sr.lock
 *.lock
 
