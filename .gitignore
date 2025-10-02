@@ -7,17 +7,18 @@
 /data/**
 /outputs/**
 /ParcelAnalysis.gdb/**
-/Index/**                 # ArcGIS project index thumbnails/caches
+/Index/**                 # ArcGIS project index caches
+**/Thumbnail/**           # ArcGIS thumbnail caches
 
-# Re-include the small, text-y bits you DO want under /data
-# (We must re-include parent dirs for Git to see whitelisted files.)
-!data/
+# Re-include ONLY the small, text-y bits you DO want under /data
 !data/README.md
 
+# Small reference data
 !data/03_external/
 !data/03_external/**/*.csv
 !data/03_external/**/*.json
 
+# Data documentation
 !data/04_docs/
 !data/04_docs/**/*.md
 !data/04_docs/**/*.txt
