@@ -7,6 +7,7 @@
 /data/**
 /outputs/**
 /ParcelAnalysis.gdb/**
+/Index/**                 # ArcGIS project index thumbnails/caches
 
 # Re-include the small, text-y bits you DO want under /data
 !data/
@@ -19,7 +20,7 @@
 !data/04_docs/**/*.txt
 !data/04_docs/**/*.csv
 
-# ArcGIS lock files anywhere (these cause "Permission denied" during git ops)
+# ArcGIS lock files anywhere
 *.sr.lock
 *.lock
 
@@ -38,14 +39,14 @@
 *.stylx
 *.atx
 
-# === GEODATABASES & BIG GIS FORMATS (belt & suspenders) ===
+# === GEODATABASES & BIG GIS FORMATS ===
 *.gdb/
 *.gdb.zip
 *.mdb
 *.accdb
 *.sde
 
-# Shapefile components
+# Shapefile parts
 *.shp
 *.shx
 *.dbf
@@ -134,18 +135,23 @@ desktop.ini
 $RECYCLE.BIN/
 
 # ============================================================================
-# WHAT WE **DO** TRACK (explicitly allowed even with rules above)
-# Core docs & repo metadata
+# WHAT WE TRACK (explicit allows)
 !README.md
 !CHANGELOG.md
 !ROADMAP.md
-
-# Config template
 !configs/paths.example.yaml
 
-# Matrix, scripts, notebooks, docs (tracked by default)
-!matrix/**
-!scripts/**
-!notes_readme/**
-!validation/**
-!docs/**
+# Matrix, scripts, notebooks, docs — allow specific file types only
+!matrix/**/*.xlsx
+!matrix/**/*.md
+!matrix/**/*.csv
+
+!scripts/**/*.py
+!scripts/**/*.ipynb
+!scripts/**/*.md
+
+!notes_readme/**/*.md
+!validation/**/*.py
+!validation/**/*.md
+!docs/**/*.md
+!docs/**/*.txt
